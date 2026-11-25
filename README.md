@@ -1,35 +1,39 @@
 # worksheet-maker
 
-공학 과목(열전달, 소성가공 등) 학습지를 만드는 Claude 스킬이에요. 수업 자료를 올리면 개념 설명부터 문제, 해설까지 한 세트로 묶어 PDF로 만들어 줘요.
+A Claude skill that turns lecture materials into study worksheets for engineering courses (heat transfer, metal forming, and more). Upload your course materials, and it builds a complete set — concept explanations, worked examples, problems, and solutions — as a PDF.
 
-## 무엇을 만드나요
+## What it makes
 
-학습지는 시중 문제집처럼 이 순서로 구성돼요.
+Each worksheet follows the order of a typical problem book.
 
-1. 개념 설명: 강사가 말로 설명하듯 구어체로 써요. 이게 뭔지 → 원인과 결과 → 식 → 식을 말로 읽기 → 문제에 쓰는 법 순서예요.
-2. 풀이 예제: 단계마다 근거를 달고, 뒤로 갈수록 풀이 단계를 비워 가요(backward fading).
-3. 확인문제: 개념을 보지 않고 떠올려야 풀리는 짧은 문제예요.
-4. 연습문제: 유형을 섞어 놓아서 어떤 방법을 쓸지 직접 골라야 해요(interleaving).
-5. 누적 복습과 전이 문제: 이전 단원 내용과 처음 보는 상황을 섞어요.
-6. 해설: 답뿐 아니라 풀이 과정, 방법을 고른 이유, 흔한 실수까지 써요.
+1. **Concepts** — Explained in a conversational tone, like a tutor talking a student through it. Each concept goes: what it is → cause and effect → equation → reading the equation in plain words → how to use it in problems.
+2. **Worked examples** — Every step comes with its reasoning. Later examples leave more steps blank for the learner to fill in (backward fading).
+3. **Check questions** — Short questions that make you recall the concept without looking back.
+4. **Practice problems** — Problem types are mixed, so you have to decide which method to use (interleaving).
+5. **Cumulative review and transfer problems** — Mix in earlier units and apply ideas to unfamiliar situations.
+6. **Solutions** — Not just answers: the full working, why that method was chosen, and common mistakes.
 
-수업 자료에 있는 그림은 필요한 자리에 잘라 붙여요. 모든 수치는 코드로 계산해서 검산해요.
+Figures from the lecture materials are cropped and placed where they help. Every number is computed and checked with code.
 
-## 설치
+## Installation
 
-Claude Code 같은 에이전트에서 쓸 때는 아래 명령어로 설치해요.
+For Claude Code and other coding agents:
 
 ```bash
 npx skills add uncledaddychgi/worksheet-maker
 ```
 
-Claude 앱에서 쓸 때는 `worksheet-maker` 폴더를 zip으로 압축해서 스킬로 업로드하면 돼요.
+For the Claude app, zip the `worksheet-maker` folder and upload it as a skill.
 
-## 사용법
+## Usage
 
-수업 자료(PDF, 사진, 슬라이드)를 올리고 "이 단원 학습지 만들어 줘"라고 하면 돼요. 범위가 자료만으로 분명하지 않으면 먼저 한 번 물어봐요. 따로 형식을 말하지 않으면 PDF로 만들어요.
+Upload your lecture materials (PDF, photos, or slides) and ask something like "Make a worksheet for this unit." If the scope isn't clear from the materials, the skill asks once before starting. Unless you ask for another format, the output is a PDF.
 
-## 파일 구조
+## Language
+
+The skill instructions are written in Korean, and worksheets are written in Korean by default. To get a worksheet in another language, just ask for it in your request.
+
+## File structure
 
 ```
 worksheet-maker/
